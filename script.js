@@ -19,7 +19,7 @@ fetch("https://reqres.in/api/users")
 .catch(error => console.log("Error"));
 */
 
-
+/*
 fetch("https://reqres.in/api/users")
 .then(res=> {
     if(res.ok){
@@ -29,5 +29,20 @@ fetch("https://reqres.in/api/users")
     )
     res.json()
 })
+.then((data)=>console.log(data))
+.catch(error => console.log("Error"));*/
+
+
+fetch("https://reqres.in/api/users",{
+    method: 'POST',
+    header: {
+        'Content-type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: 'New User 1'
+    })    
+})
+.then(res=> {
+    return res.json()})
 .then((data)=>console.log(data))
 .catch(error => console.log("Error"));
