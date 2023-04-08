@@ -1,1 +1,33 @@
-console.log(fetch("https://reqres.in/api/users").then(res=>console.log(res)));
+// console.log(fetch("https://reqres.in/api/users").then(res=>console.log(res)));
+
+
+/*fetch("https://reqres.in/api/users")
+.then(res=> res.json())
+.then(data => console.log(data))
+*/
+
+
+/*fetch("https://reqres.in/api/users")
+.then(res=> res.json())
+.then(data => console.log(data))
+*/
+
+/*
+fetch("https://reqres.in/api/users")
+.then(res=> res.json())
+.then(data => console.log(data))
+.catch(error => console.log("Error"));
+*/
+
+
+fetch("https://reqres.in/api/users")
+.then(res=> {
+    if(res.ok){
+        console.log('Fetch Successful')
+    }else (
+        console.log('Fetch is NOT SUCCESSFUL!!')
+    )
+    res.json()
+})
+.then((data)=>console.log(data))
+.catch(error => console.log("Error"));
